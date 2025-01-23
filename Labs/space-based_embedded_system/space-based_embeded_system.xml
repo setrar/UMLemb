@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<TURTLEGMODELING version="2.0" ANIMATE_INTERACTIVE_SIMULATION="true" ACTIVATE_PENALTIES="true" UPDATE_INFORMATION_DIPLO_SIM="true" ANIMATE_WITH_INFO_DIPLO_SIM="true" OPEN_DIAG_DIPLO_SIM="false" LAST_SELECTED_MAIN_TAB="2" LAST_SELECTED_SUB_TAB="0">
+<TURTLEGMODELING version="2.0" ANIMATE_INTERACTIVE_SIMULATION="true" ACTIVATE_PENALTIES="true" UPDATE_INFORMATION_DIPLO_SIM="true" ANIMATE_WITH_INFO_DIPLO_SIM="true" OPEN_DIAG_DIPLO_SIM="false" LAST_SELECTED_MAIN_TAB="2" LAST_SELECTED_SUB_TAB="1">
 
 <Modeling type="Avatar Requirement" nameTab="Requirements" >
 <AvatarRDPanel name="AVATARRD" minX="6" maxX="1600" minY="6" maxY="960" zoom="0.6400000000000001" >
@@ -2547,7 +2547,7 @@
 <MainCode value="}"/>
 <Optimized value="true" />
 <considerTimingOperators value="true" />
-<Validated value="" />
+<Validated value="Fuel_Quantity_Sensor;Battery_Level_Sensor;Temperature_Sensor;Position_Sensor_3D;Ground_Station;Space_Based_System_Software;Sensors_API;TM_Encipher_Module;TC_Decipher_Module;RF_Transmitter;RF_Receiver;Encryption_Module;RF_Tranceiver;" />
 <Ignored value="" />
 
 <CONNECTOR type="5002" id="1315" index="0" uid="b1e0f0dd-311f-4d12-8a76-88a1f2c93216" >
@@ -2575,8 +2575,6 @@
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <extraparam>
-<iso value="in receiving()" />
-<osd value="out forwardingTC()" />
 <FIFOType asynchronous="false" synchronousCH="true" size="1" blocking="false" private="true" broadcast="false" lossy="false" ams="false" />
 </extraparam>
 </CONNECTOR>
@@ -2590,6 +2588,8 @@
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <extraparam>
+<isd value="in receivecTC()" />
+<oso value="out sendTC()" />
 <FIFOType asynchronous="false" synchronousCH="true" size="1" blocking="false" private="true" broadcast="false" lossy="false" ams="false" />
 </extraparam>
 </CONNECTOR>
@@ -3001,7 +3001,7 @@
 <extraparam>
 <blockType data="block" color="-4072719" />
 <CryptoBlock value="false" />
-<Signal value="out sendTC()" attached="false" />
+<Signal value="out sendTC()" attached="true" />
 </extraparam>
 </COMPONENT>
 
@@ -3345,7 +3345,7 @@
 <extraparam>
 <blockType data="block" color="-4072719" />
 <CryptoBlock value="false" />
-<Signal value="out forwardingTC()" attached="true" />
+<Signal value="out forwardingTC()" attached="false" />
 <Signal value="out forwardTCforDecryption()" attached="true" />
 </extraparam>
 </COMPONENT>
@@ -3454,7 +3454,7 @@
 <extraparam>
 <blockType data="block" color="-4072719" />
 <CryptoBlock value="false" />
-<Signal value="in receiving()" attached="true" />
+<Signal value="in receivecTC()" attached="true" />
 </extraparam>
 </SUBCOMPONENT>
 
@@ -3468,7 +3468,7 @@
 <infoparam name="connector" value="null" />
 <TGConnectingPoint num="0" id="1897" />
 <P1  x="388" y="168" id="2314" />
-<P2  x="390" y="249" id="1976" />
+<P2  x="390" y="258" id="1976" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 </CONNECTOR><SUBCOMPONENT type="-1" id="1896" index="12" uid="7d06c798-19a6-4c7d-8fdd-660008b1c684" >
@@ -3726,7 +3726,7 @@
 </SUBCOMPONENT>
 
 <COMPONENT type="5106" id="2015" index="5" uid="5fdf2c45-0daf-4c09-991c-3ad1f4104aec" >
-<cdparam x="324" y="249" />
+<cdparam x="324" y="258" />
 <sizeparam width="132" height="50" minWidth="40" minHeight="30" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <enabled value="true" />
@@ -4193,7 +4193,107 @@
 </AVATARStateMachineDiagramPanel>
 
 <AVATARStateMachineDiagramPanel name="Ground_Station" minX="10" maxX="2500" minY="10" maxY="1500" zoom="1.0" >
-<COMPONENT type="5100" id="2328" index="0" uid="f86cb7fd-7e48-4486-adaf-2b55a6b41514" >
+<CONNECTOR type="5102" id="5823" index="0" uid="89910995-68bd-4e84-b048-57c2d23e9b8d" >
+<cdparam x="410" y="142" />
+<sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<infoparam name="connector" value="null" />
+<TGConnectingPoint num="0" id="5824" />
+<P1  x="410" y="142" id="5805" />
+<P2  x="430" y="222" id="5822" />
+<AutomaticDrawing  data="true" />
+<new d="false" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="5825" index="5" uid="a29d0b3a-3c89-4859-9a34-879ad0fe79f0" >
+<father id="5823" num="0" />
+<cdparam x="420" y="182" />
+<sizeparam width="50" height="25" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<hidden value="false" />
+<enabled value="true" />
+<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+<infoparam name="List of all parameters of an Avatar SMD transition" value="" />
+<new d="false" />
+<TGConnectingPoint num="0" id="5826" />
+<TGConnectingPoint num="1" id="5827" />
+<TGConnectingPoint num="2" id="5828" />
+<TGConnectingPoint num="3" id="5829" />
+<extraparam>
+<guard value="[ ]" enabled="true"/>
+<afterMin value="" enabled="true"/>
+<afterMax value="" enabled="true"/>
+<extraDelay1 value="" enabled="true"/>
+<extraDelay2 value="" enabled="true"/>
+<delayDistributionLaw value="0" enabled="true"/>
+<computeMin value="" enabled="true"/>
+<computeMax value="" enabled="true"/>
+<probability value="" enabled="true"/>
+</extraparam>
+</SUBCOMPONENT>
+
+<COMPONENT type="5101" id="5821" index="1" uid="c1dd10af-20af-4785-8161-d7b85cba91fb" >
+<cdparam x="420" y="227" />
+<sizeparam width="20" height="20" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<hidden value="false" />
+<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+<infoparam name="stop state" value="null" />
+<new d="false" />
+<TGConnectingPoint num="0" id="5822" />
+</COMPONENT>
+
+<CONNECTOR type="5102" id="5814" index="2" uid="0dc00406-e286-4221-9700-b8bca78eac30" >
+<cdparam x="407" y="70" />
+<sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<infoparam name="connector" value="null" />
+<TGConnectingPoint num="0" id="5815" />
+<P1  x="407" y="70" id="2327" />
+<P2  x="410" y="112" id="5804" />
+<AutomaticDrawing  data="true" />
+<new d="false" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="5816" index="6" uid="7c999777-48e6-4237-a7c1-115e4d1c87bc" >
+<father id="5814" num="0" />
+<cdparam x="410" y="85" />
+<sizeparam width="50" height="25" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<hidden value="false" />
+<enabled value="true" />
+<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+<infoparam name="List of all parameters of an Avatar SMD transition" value="" />
+<new d="false" />
+<TGConnectingPoint num="0" id="5817" />
+<TGConnectingPoint num="1" id="5818" />
+<TGConnectingPoint num="2" id="5819" />
+<TGConnectingPoint num="3" id="5820" />
+<extraparam>
+<guard value="[ ]" enabled="true"/>
+<afterMin value="" enabled="true"/>
+<afterMax value="" enabled="true"/>
+<extraDelay1 value="" enabled="true"/>
+<extraDelay2 value="" enabled="true"/>
+<delayDistributionLaw value="0" enabled="true"/>
+<computeMin value="" enabled="true"/>
+<computeMax value="" enabled="true"/>
+<probability value="" enabled="true"/>
+</extraparam>
+</SUBCOMPONENT>
+
+<COMPONENT type="5103" id="5803" index="3" uid="24105ad0-0555-48e7-9c8d-062a0cc946d3" >
+<cdparam x="379" y="117" />
+<sizeparam width="62" height="20" minWidth="30" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<hidden value="false" />
+<enabled value="true" />
+<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+<infoparam name="Send signal" value="sendTC()" />
+<new d="false" />
+<TGConnectingPoint num="0" id="5804" />
+<TGConnectingPoint num="1" id="5805" />
+<TGConnectingPoint num="2" id="5806" />
+<TGConnectingPoint num="3" id="5807" />
+<TGConnectingPoint num="4" id="5808" />
+<TGConnectingPoint num="5" id="5809" />
+<TGConnectingPoint num="6" id="5810" />
+<TGConnectingPoint num="7" id="5811" />
+<TGConnectingPoint num="8" id="5812" />
+<TGConnectingPoint num="9" id="5813" />
+</COMPONENT>
+
+<COMPONENT type="5100" id="2328" index="4" uid="f86cb7fd-7e48-4486-adaf-2b55a6b41514" >
 <cdparam x="400" y="50" />
 <sizeparam width="15" height="15" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
