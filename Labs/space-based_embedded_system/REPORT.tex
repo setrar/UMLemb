@@ -396,6 +396,10 @@
     
     \[\Huge\textbf{Lab 3}\]
 
+\(\large \textbf{Student: Brice Robert}\)
+
+\(\textbf{Promo: 2025}\)
+
 \href{https://perso.telecom-paristech.fr/apvrille/UMLEmb/labs.html}{Link}
 
 Analysis and design of a
@@ -579,24 +583,103 @@ Start & Duration & End & Task \\
 11:30:00 & 00:20:00 & 11:50:00 & Verification \\
 \end{longtable}
 
-    \begin{figure}
+    \section{General Comment}\label{general-comment}
+
+I tried staying in the allocated time to train for the exam. I took to
+much time in the Requirements and tried speeding up at the end but
+lacked time to finish.
+
+This is whatever I achieved in the allocated time. The experience helped
+me in cutting some content for the exam.
+
+    \section{Diagrams}\label{diagrams}
+
+The list of the attempted diagrams through the model.
+
+\subsection{Requirements}\label{requirements}
+
+\begin{figure}
 \centering
 \pandocbounded{\includegraphics[keepaspectratio]{images/uml_emb_Requirements.png}}
 \caption{images}
 \end{figure}
 
-    \begin{figure}
+\subsection{Use Case Diagram}\label{use-case-diagram}
+
+\begin{figure}
 \centering
 \pandocbounded{\includegraphics[keepaspectratio]{images/uml_emb_UC.png}}
 \caption{image}
 \end{figure}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
+\subsection{Activity Diagram}\label{activity-diagram}
 
-\end{Verbatim}
-\end{tcolorbox}
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/uml_emb_AD.png}}
+\caption{image}
+\end{figure}
+
+\subsection{Block Diagram}\label{block-diagram}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/uml_emb_BD.png}}
+\caption{image}
+\end{figure}
+
+\subsection{State Machine Diagrams}\label{state-machine-diagrams}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/uml_emb_SD1.png}}
+\caption{image}
+\end{figure}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/uml_emb_SD2.png}}
+\caption{image}
+\end{figure}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio]{images/uml_emb_SD3.png}}
+\caption{image}
+\end{figure}
+
+    \section{Attempts}\label{attempts}
+
+\begin{quote}
+Prove that a TC always result in a TM, apart if another TC is received
+before sending TM.
+\end{quote}
+
+Below are the description of the traces I tried to attempt but couldn't
+due to time.
+
+\begin{itemize}
+\tightlist
+\item
+  Nominal Simulation Trace The simulation of a TeleCommand (TC)
+  lifecycle resulted in:
+\end{itemize}
+
+TC received by RF Receiver → Deciphered → Stored in buffer. Sensor data
+collected → TM packet built → Enciphered → TM transmitted to the Ground
+Station. Screenshot: Include a trace showing successful TC-to-TM flow.
+
+\begin{itemize}
+\tightlist
+\item
+  Error Trace A simulation was run to model a memory error:
+\end{itemize}
+
+A high-energy particle flipped a bit in memory. CRC validation failed →
+Task flagged an error. Watchdog detected the delay → Restarted the
+system. System reinitialized and resumed normal operations.
+
+    
 
 
     % Add a bibliography block to the postdoc
